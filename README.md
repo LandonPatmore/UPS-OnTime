@@ -39,7 +39,7 @@ Python
 ### Contributors:
 * Landon Patmore *lpatmore@oswego.edu*
 * Jeffrey Johnson *jjohns28@oswego.edu*
-* Cesar Rincon *crincon@oswego.edu
+* Cesar Rincon *crincon@oswego.edu*
 * Naina Jain *
 
 ![alt text] (https://github.com/landonp1203/UPS-OnTime/blob/master/ups_banner.gif "UPS Logo 21")
