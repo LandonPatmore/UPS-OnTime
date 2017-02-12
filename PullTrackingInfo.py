@@ -25,12 +25,13 @@ def trackingAPI(t_Num):
     }
 
     r = requests.post(TRACKING_API, data=json.dumps(payload), headers=HEADERS)
-    print r.content
+    #print r.content
     analyzeTrackingAPI(r.content)
 
 def analyzeTrackingAPI(not_analyzed):
     toAnalyze = json.loads(not_analyzed)   
     shipmentInfo = toAnalyze["TrackResponse"]["Shipment"] 
+    
 
     shippedFrom = []
     shippedTo = []
@@ -48,21 +49,25 @@ def analyzeTrackingAPI(not_analyzed):
         countTo += 1
      
 
+    packageDeliveryDate = shipmentInfo["Package"]["Activity"][0]["Date"]
+    packageDeliveryTime = shipmentInfo["Package"]["Activity"][0]["Time"]
     weight  = shipmentInfo["ShipmentWeight"]
     measurement = weight["Weight"]
     units = weight["UnitOfMeasurement"]["Code"]
-    serviceCode = shipmentInfo["Service"]["Code"]
+    serviceCode = shipmentInfo["Service"]["Description"]
+
     
     if shipmentInfo.has_key("PickupDate"):
         pickUp = shipmentInfo["PickupDate"]
     else:
-        print "no"
+        for i in range(len(shipmentInfo["Package"]["Activity"])):
+            if(i == (len(shipmentInfo["Package"]["Activity"])) - 2):
+                pickUp = shipmentInfo["Package"]["Activity"][i]["Date"]
 
-    pickUp = shipmentInfo["PickupDate"]
 
-    timeInTransitAPI(shippedFrom, shippedTo, measurement, units, serviceCode, pickUp)
+    timeInTransitAPI(shippedFrom, shippedTo, measurement, units, serviceCode, pickUp, packageDeliveryDate, packageDeliveryTime)
 
-def timeInTransitAPI(sF, sTo, measurement, units, serviceCode, pickUp):
+def timeInTransitAPI(sF, sTo, measurement, units, serviceCode, pickUp, packageDate, packageTime):
     payload = {
         "Security": {
             "UsernameToken": {
@@ -95,20 +100,31 @@ def timeInTransitAPI(sF, sTo, measurement, units, serviceCode, pickUp):
                 } 
             }, 
             "Pickup": { 
-                        "Date": "20170208"
+                        "Date": pickUp
             }, 
             "ShipmentWeight": {
                 "UnitOfMeasurement": { 
-                    "Code": "LBS", 
+                    "Code": units, 
                     "Description": "Pounds"
                 },
-                "Weight": "0.80" 
+                "Weight": measurement 
             },
             "MaximumListSize": "20" 
         }
     }
     
     r = requests.post(TIME_IN_TRANSIT_API, data=json.dumps(payload), headers=HEADERS)
-    print r.content
+    notAnalyzed = r.content
+
+    toAnalyze = json.loads(notAnalyzed)
+
+    service = toAnalyze["TimeInTransitResponse"]["TransitResponse"]["ServiceSummary"]
+    serviceType = ""
+    serviceArrivalTime = ""
+
+    for i in range(len(service)):
+        if(serviceCode.lower() == service[i]["Service"]["Description"].lower()):
+            serviceType = service[i]["Service"]["Description"]
+            serviceArrivalTime = service[i]["EstimatedArrival"]["Arrival"]["Time"]
 
 
