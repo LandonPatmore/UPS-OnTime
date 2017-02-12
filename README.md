@@ -21,7 +21,7 @@ The UPS On-Time project is a program designed to take the tracking data provided
 
 * UPS-provided Tracking Numbers
 
-* Personal UPS Tracking Number
+* Personal UPS Tracking Numbers
 
 ### Languages
 * Python
