@@ -1,4 +1,5 @@
 ![alt text] (https://github.com/landonp1203/UPS-OnTime/blob/master/ups_banner.gif "UPS Logo")
+![alt text] (https://github.com/landonp1203/UPS-OnTime/blob/master/LOGO_L.gif "UPS LOGO 2")
 
 # UPS On-Time
 
