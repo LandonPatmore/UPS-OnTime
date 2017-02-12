@@ -1,5 +1,4 @@
-![alt text] (https://github.com/landonp1203/UPS-OnTime/blob/master/ups_banner.gif "UPS Logo")
-![alt text] (https://github.com/landonp1203/UPS-OnTime/blob/master/LOGO_S.gif "UPS LOGO 2")
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
 
 # UPS On-Time Analytics
 
@@ -31,5 +30,3 @@ The UPS On-Time project is a program designed to take the tracking data provided
 * Jeffrey Johnson *jjohns28@oswego.edu*
 * Cesar Rincon *crincon@oswego.edu*
 * Naina Jain *
-
-![alt text] (https://github.com/landonp1203/UPS-OnTime/blob/master/ups_banner.gif "UPS Logo 21")
