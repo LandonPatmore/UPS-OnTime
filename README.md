@@ -1,4 +1,4 @@
-![UPS](http://i0.wp.com/flyrfd.com/wp-content/uploads/2015/09/ups-logo.jpg)
+<img src="http://i0.wp.com/flyrfd.com/wp-content/uploads/2015/09/ups-logo.jpg" width="150">
 
 # UPS On-Time Analytics
 
