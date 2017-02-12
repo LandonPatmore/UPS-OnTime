@@ -1,6 +1,7 @@
 import requests
 import json
 from Secrets import *
+from Analytics import analytics
 
 def trackingAPI(t_Num):
     
@@ -121,10 +122,12 @@ def timeInTransitAPI(sF, sTo, measurement, units, serviceCode, pickUp, packageDa
     service = toAnalyze["TimeInTransitResponse"]["TransitResponse"]["ServiceSummary"]
     serviceType = ""
     serviceArrivalTime = ""
+    serviceArrivalDate = ""
 
     for i in range(len(service)):
         if(serviceCode.lower() == service[i]["Service"]["Description"].lower()):
             serviceType = service[i]["Service"]["Description"]
             serviceArrivalTime = service[i]["EstimatedArrival"]["Arrival"]["Time"]
+            serviceArrivalDate = service[i]["EstimatedArrival"]["Arrival"]["Date"]
 
-
+    analytics(packageDate, packageTime, serviceArrivalDate, serviceArrivalTime, serviceType, sTo[0])
