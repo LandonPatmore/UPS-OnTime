@@ -1,4 +1,5 @@
-
+count = 0
+total = 0
 
 
 def analytics(actualDate, actualTime, estDate, estTime, serviceType, zipcode):
@@ -8,3 +9,13 @@ def analytics(actualDate, actualTime, estDate, estTime, serviceType, zipcode):
     print "Est. Time: " + estTime
     print "Service: " + serviceType
     print "Zipcode: " + zipcode
+
+    global total 
+    total = total + 1
+    if (int(estDate) - int(actualDate) >= 0):
+        if(int(estTime) - int(actualTime) >= 0):
+            global count
+            count = count + 1
+
+    print "{}% On Time Percentage for {} at Zip Code {}".format(((count/total) * 100), serviceType, zipcode)
+
