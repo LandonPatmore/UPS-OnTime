@@ -20,7 +20,7 @@ The UPS On-Time project is a program designed to take the tracking data provided
 ### Development Tools
 *VIM Editor
 
-FileZilla
+*FileZilla
 
 *PUTTY
 
@@ -35,11 +35,11 @@ Personal UPS Tracking Number
 
 ### Languages
 Python
-HTML
 
 ### Contributors:
 * Landon Patmore *lpatmore@oswego.edu*
 * Jeffrey Johnson *jjohns28@oswego.edu*
+* Cesar Rincon *crincon@oswego.edu
 * Naina Jain *
 
 ![alt text] (https://github.com/landonp1203/UPS-OnTime/blob/master/ups_banner.gif "UPS Logo 21")
