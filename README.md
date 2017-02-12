@@ -30,7 +30,6 @@
 * Python
 
 ### Contributors:
-* Landon Patmore *lpatmore@oswego.edu*
-* Jeffrey Johnson *jjohns28@oswego.edu*
-* Cesar Rincon *crincon@oswego.edu*
-* Naina Jain *
+* Landon Patmore *lpatmore@oswego.edu* (Project Developer)
+* Jeffrey Johnson *jjohns28@oswego.edu* (GitHub Documentation)
+* Cesar Rincon *crincon@oswego.edu* (Debug Tester)
