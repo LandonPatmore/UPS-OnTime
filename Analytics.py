@@ -16,6 +16,7 @@ def analytics(actualDate, actualTime, estDate, estTime, serviceType, zipcode):
         if(int(estTime) - int(actualTime) >= 0):
             global count
             count = count + 1
-
+    
+    print "Count {} : Total {}".format(count, total)
     print "{}% On Time Percentage for {} at Zip Code {}".format(((count/total) * 100), serviceType, zipcode)
 
