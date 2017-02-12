@@ -10,7 +10,7 @@ total = 0
 
 def getUserInput():
     while True:
-        userChoice = raw_input("Enter debug mode (debug )or live mode (live) or exit: ")
+        userChoice = raw_input("Enter debug mode (debug) or live mode (live) or exit: ")
         if userChoice == "exit":
             break
         if userChoice == "debug":
@@ -37,7 +37,7 @@ def getUserInput():
 
                 if serviceType == 1:
                     strServiceType = "GROUND"
-                print total
+                print "Count {} : Total {}".format(count, total)
                 print "{}% On Time Percentage for {} at Zip Code {}".format(((count/total) * 100), strServiceType, zipcode)
         else:
             trackingNumber = raw_input("Enter tracking number: ")
