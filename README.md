@@ -1,4 +1,4 @@
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+![UPS](http://i0.wp.com/flyrfd.com/wp-content/uploads/2015/09/ups-logo.jpg)
 
 # UPS On-Time Analytics
 
