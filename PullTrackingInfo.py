@@ -49,21 +49,23 @@ def analyzeTrackingAPI(not_analyzed):
             shippedTo.append(value)
         countTo += 1
      
+    packageInfo = shipmentInfo["Package"]["Activity"][0]
+    packageDeliveryDate = packageInfo["Date"]
+    packageDeliveryTime = packageInfo["Time"]
 
-    packageDeliveryDate = shipmentInfo["Package"]["Activity"][0]["Date"]
-    packageDeliveryTime = shipmentInfo["Package"]["Activity"][0]["Time"]
     weight  = shipmentInfo["ShipmentWeight"]
     measurement = weight["Weight"]
     units = weight["UnitOfMeasurement"]["Code"]
+    
     serviceCode = shipmentInfo["Service"]["Description"]
 
-    
     if shipmentInfo.has_key("PickupDate"):
         pickUp = shipmentInfo["PickupDate"]
     else:
-        for i in range(len(shipmentInfo["Package"]["Activity"])):
-            if(i == (len(shipmentInfo["Package"]["Activity"])) - 2):
-                pickUp = shipmentInfo["Package"]["Activity"][i]["Date"]
+        activity = shipmentInfo["Package"]["Activity"]
+        for i in range(len(activity)):
+            if(i == (len(activity)) - 2):
+                pickUp = activity[i]["Date"]
 
 
     timeInTransitAPI(shippedFrom, shippedTo, measurement, units, serviceCode, pickUp, packageDeliveryDate, packageDeliveryTime)
@@ -127,7 +129,9 @@ def timeInTransitAPI(sF, sTo, measurement, units, serviceCode, pickUp, packageDa
     for i in range(len(service)):
         if(serviceCode.lower() == service[i]["Service"]["Description"].lower()):
             serviceType = service[i]["Service"]["Description"]
-            serviceArrivalTime = service[i]["EstimatedArrival"]["Arrival"]["Time"]
-            serviceArrivalDate = service[i]["EstimatedArrival"]["Arrival"]["Date"]
+
+            estimations = service[i]["EstimatedArrival"]["Arrival"]
+            serviceArrivalTime = estimations["Time"]
+            serviceArrivalDate = estimations["Date"]
 
     analytics(packageDate, packageTime, serviceArrivalDate, serviceArrivalTime, serviceType, sTo[0])
