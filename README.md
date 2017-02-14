@@ -12,11 +12,12 @@
 
 * What it does - It pulls the actual dates and times the package was delivered and also the estimated dates and times and keeps track of the On-Time percentage of a specific area.
 
-## Environment
-* Terminal
-
-### Development Tools
-* Vim/tmux
+## How to Run
+```
+cd UPS-OnTime
+python ./UPS-OnTime
+```
+Follow prompts - Debug data is included
 
 
 ### Data Sources
