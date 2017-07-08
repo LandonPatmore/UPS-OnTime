@@ -1,8 +1,4 @@
-<p align="center">
-  <img src="http://i0.wp.com/flyrfd.com/wp-content/uploads/2015/09/ups-logo.jpg" width="150">
-</p>
-
-# UPS On-Time Analytics
+# Area Package OnTime
 ### WINNER BRICKHACK3, MOST CREATIVE USE OF UPS APIs
 
 ### Synopsis and Motivation
@@ -15,7 +11,7 @@
 
 ## How to Run
 ```
-cd UPS-OnTime
+cd Area-Package-OnTime
 python ./UPS-OnTime
 ```
 Follow prompts - Debug data is included
