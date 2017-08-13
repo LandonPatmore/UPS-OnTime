@@ -1,4 +1,4 @@
-# Area Package OnTime
+# UPS OnTime
 ### WINNER BRICKHACK3, MOST CREATIVE USE OF UPS APIs
 
 ### Synopsis and Motivation
